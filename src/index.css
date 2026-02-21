@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ULTRA LOW - Dark Sales Page Design System */
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 5%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 98%;
+
+    /* Gold as primary */
+    --primary: 43 89% 50%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 55%;
+
+    --accent: 43 89% 50%;
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 43 89% 50%;
+
+    --radius: 0.5rem;
+
+    /* Gold tones */
+    --gold: 43 89% 50%;
+    --gold-light: 45 95% 65%;
+    --gold-dark: 38 80% 35%;
+
+    /* Gradients as CSS vars */
+    --gradient-gold: linear-gradient(135deg, hsl(38 80% 35%), hsl(45 95% 65%), hsl(38 80% 35%));
+    --gradient-gold-text: linear-gradient(180deg, hsl(45 95% 70%) 0%, hsl(43 89% 45%) 50%, hsl(38 75% 30%) 100%);
+    --gradient-hero: radial-gradient(ellipse at center, hsl(43 89% 15% / 0.3) 0%, hsl(0 0% 0%) 70%);
+    --shadow-gold: 0 0 40px hsl(43 89% 50% / 0.3), 0 0 80px hsl(43 89% 50% / 0.1);
+    --shadow-card: 0 4px 30px hsl(0 0% 0% / 0.5), 0 1px 0 hsl(43 89% 50% / 0.1);
+
+    --sidebar-background: 0 0% 5%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 43 89% 50%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 0 0% 10%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 0 0% 15%;
+    --sidebar-ring: 43 89% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+    background-color: hsl(0 0% 0%);
+  }
+
+  h1, h2, h3 {
+    font-family: 'Bebas Neue', sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-gold {
+    background: var(--gradient-gold-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-ghost {
+    color: transparent;
+    -webkit-text-stroke: 1px hsl(0 0% 25%);
+  }
+
+  .glow-gold {
+    text-shadow: 0 0 30px hsl(43 89% 50% / 0.8), 0 0 60px hsl(43 89% 50% / 0.4);
+  }
+
+  .shadow-gold {
+    box-shadow: var(--shadow-gold);
+  }
+
+  .gradient-border {
+    border: 1px solid transparent;
+    background: linear-gradient(hsl(0 0% 5%), hsl(0 0% 5%)) padding-box,
+                var(--gradient-gold) border-box;
+  }
+
+  .quiz-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .font-bebas {
+    font-family: 'Bebas Neue', sans-serif;
+  }
+
+  .font-oswald {
+    font-family: 'Oswald', sans-serif;
+  }
+}
